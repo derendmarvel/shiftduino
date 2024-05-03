@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', [ProductController::class, 'index']);
+
+Route::get('/products', [ProductController::class, 'show']);
+
+Route::get('/product/{id}', [ProductController::class, 'detail']);
+
+Route::post('/wishlist/{id}', [ProductController::class, 'wishlist']);
+
+Route::post('feedback', [FeedbackController::class, 'create']);
+
+// Route::get('/product', function () {
+//     return view('product');
+// });
+
+// Route::get('/products', function () {
+//     return view('productlist');
+// });
+
