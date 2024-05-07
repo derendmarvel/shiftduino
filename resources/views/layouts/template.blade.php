@@ -18,21 +18,27 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    @stack('css')
+
     <style>
         html, body{
             font-family: 'Poppins', sans-serif;
         }
 
         .fs-0{
-            font-size: 64px;
+            font-size: 32px;
+        }
+
+        .normal-text{
+            font-size: 16px;
         }
 
         .header{
-            background: url('/images/Background-1.png');
+            background: transparent;
             background-size: cover;
-            height: 100%;
-            padding-top: 200px;
-            padding-bottom: 200px;
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
         .header-2{
@@ -42,9 +48,9 @@
 
         .swiper {
             width: 100%;
-            height: 400px;
-            padding-left: 100px;
-            padding-right: 100px;
+            height: 300px;
+            padding-left: 40px;
+            padding-right: 40px;
         }
 
         .swiper-slide {
@@ -67,58 +73,98 @@
             width: 100%;
         }
 
+        @media only screen and (min-width:767px){
+            .hide-on-mobile {
+                display: none; /* Hide the columns */
+            }
+
+            .fs-0{
+                font-size: 64px;
+            }
+
+            .normal-text{
+                font-size: 22px;
+            }
+
+            .header{
+                background: url('/images/Background-1.png');
+                background-size: cover;
+                height: 100%;
+                padding-top: 200px;
+                padding-bottom: 200px;
+            }
+
+            .swiper {
+                width: 100%;
+                height: 400px;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+
+        }
+
     </style>
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary p-3">
+    <nav class="navbar navbar-expand-md bg-body-tertiary p-3">
         <div class="container-fluid">
             <a class="navbar-brand fs-2 fw-bold ms-3"> SHIFTDUINO </a>
-            <ul class = "nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold text-black" aria-current="page" href="/"> Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
-                </li>
-                @auth
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold text-black" href="/wishlist"> Wishlist </a>
-                </li>
-                @endauth
-            </ul>
-            <ul class="nav justify-content-end">
-                @guest
-                @if (Route::has('login'))
-                <li class="nav-item">
-                    <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @endif
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
-                @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
-                    </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="flex-grow-1 d-flex justify-content-center">
+                <ul class = "nav">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-black" aria-current="page" href="/"> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
+                    </li>
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-black" href="/wishlist"> Wishlist </a>
+                    </li>
+                    @endauth
+                </ul>
+            </div>
+            <div class="d-flex justify-content-end">
+                <ul class="nav">
+                    @guest
+                    @if (Route::has('login'))
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @endif
 
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item text-black" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text-black">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                @endguest
-            </ul>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-black" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text-black">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
+                </ul>
+            </div>
+            </div>
         </div>
     </nav>
 

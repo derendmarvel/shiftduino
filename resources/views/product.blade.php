@@ -2,12 +2,29 @@
 
 @section('title', 'Details')
 
+@push('css') 
+    <style>
+        .bg-background-image {
+            background: transparent;
+        }
+
+        @media (min-width: 767px) { /* Bootstrap's 'sm' breakpoint, adjust as needed */
+            .bg-background-image {
+                background: url('{{ $product->image2 }}');
+                background-size: cover; 
+                height: 500px;
+            }
+        }
+</style>
+@endpush
+
 @section('content')
-    <div class = "row px-5 py-4 justify-content-center align-items-center align-middle" style = "background: url('{{ $product->image2 }}'); background-size: cover; height: 500px;">
-        <div class = "col-6">
+    <div class = "row px-5 py-4 justify-content-center align-items-center align-middle bg-background-image">
+        <div class = "col-0 col-md-6 mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="1500">
+            <img src = "{{ $product-> image }}" class = "w-100 m-0 p-0 hide-on-mobile">
         </div>
 
-        <div class = "col-6 px-3" data-aos="fade-up" data-aos-duration="1500">
+        <div class = "col-12 col-md-6 px-3" data-aos="fade-up" data-aos-duration="1500">
             <h1 class = "fw-bold fs-0"> {{ $product->name }} </h1> 
             <p class = "opacity-75"> Rp {{ $product->price }}.000 </p>
 
