@@ -35,13 +35,21 @@ class ProductController extends Controller
         $user = Auth::user();
         $product = Product::find($id);
 
-        $existingWishlist = Wishlist::where('user_id', $user->id)
-                                        ->where('product_id', $product->id)
-                                        ->first();
-        return view('product', [
-            'product' => $product,
-            'existingWishlist' => $existingWishlist
-        ]);
+        if ($user){
+            $existingWishlist = Wishlist::where('user_id', $user->id)
+                                            ->where('product_id', $product->id)
+                                            ->first();
+            
+            return view('product', [
+                'product' => $product,
+                'existingWishlist' => $existingWishlist
+            ]);
+        } else {
+            return view('product', [
+                'product' => $product
+            ]);
+        }
+        
     }
 
     public static function wishlist($id){

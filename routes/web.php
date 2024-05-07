@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,11 @@ Route::get('/products', [ProductController::class, 'show']);
 
 Route::get('/product/{id}', [ProductController::class, 'detail']);
 
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
+
 Route::post('/wishlist/{id}', [ProductController::class, 'wishlist']);
+
+Route::delete('/wishlist/destroy/{product}', [WishlistController::class, 'destroy']);
 
 Route::post('feedback', [FeedbackController::class, 'create']);
 

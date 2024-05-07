@@ -62,6 +62,11 @@
             margin: 0;
         }
 
+        .player{
+            aspect-ratio: 16/9;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -75,9 +80,11 @@
                 <li class="nav-item">
                     <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
                 </li>
+                @auth
                 <li class="nav-item">
-                    <a class="nav-link fw-semibold text-black" href="/products"> About </a>
+                    <a class="nav-link fw-semibold text-black" href="/wishlist"> Wishlist </a>
                 </li>
+                @endauth
             </ul>
             <ul class="nav justify-content-end">
                 @guest

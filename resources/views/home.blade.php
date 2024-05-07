@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class = "row p-5 justify-content-center" id = "products">
+    <div class = "row p-5 justify-content-center">
         <h1 class = "fw-bold fs-0 mb-0 pb-0 text-center" data-aos="fade-up" data-aos-duration="1500"> Products </h1>
         <h5 class = "fw-light mb-5 text-center" data-aos="fade-up" data-aos-duration="1500"> Find your perfect Shiftduino </h5>
         <div class = "col-3 shadow-sm rounded-3 p-0 mx-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250">
@@ -32,22 +32,34 @@
                 <a class = " btn btn-outline-success rounded-0" href = "/product/{{$product2->id}}"> View Product </a>
             </div>
         </div>
-        <!-- <div class = "col-3 shadow-sm rounded-3 p-0">
-            <img src = "/images/2.jpg" class = "w-100 m-0">
-            <div class = "pt-2 pb-4 px-4"> 
-                <p class = "fw-medium my-2"> RoboDuino (Orange) </p>
-                <p class = "opacity-50"> Rp. 200.000 </p>
-                <a class = " btn btn-outline-success rounded-0" href = "/product"> View Product </a>
-            </div>
+    </div>
+
+    <div class = "row p-5 justify-content-center grid gap-3">
+        <h1 class = "fw-bold fs-0 mb-0 pb-0 text-center" data-aos="fade-up" data-aos-duration="1500"> Features </h1>
+        <h5 class = "fw-light mb-5 text-center" data-aos="fade-up" data-aos-duration="1500"> What our product caters </h5>
+        <div class = "col-3 btn btn-outline-dark align-items-center align-middle py-5 px-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250">
+            <p class = "fs-3 fw-bold mb-2"> Animated Display </p> 
+            <p> Your ShiftDuino will change colors and/or expressions as your RPM changes! </p>
         </div>
-        <div class = "col-3 shadow-sm rounded-3 p-0">
-            <img src = "/images/3.jpg" class = "w-100 m-0">
-            <div class = "pt-2 pb-4 px-4"> 
-                <p class = "fw-medium my-2"> RoboDuino (Green) </p>
-                <p class = "opacity-50"> Rp. 200.000 </p>
-                <a class = " btn btn-outline-success rounded-0" href = "/product"> View Product </a>
-            </div>
-        </div> -->
+        <div class = "col-3 btn btn-outline-dark align-items-center align-middle py-5 px-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+            <p class = "fs-3 fw-bold"> Warning Beep </p> 
+            <p> Be warned of high RPM levels with automated alarmed displays! </p>
+        </div>
+        <div class = "col-3 btn btn-outline-dark align-items-center align-middle py-5 px-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="750">
+            <p class = "fs-3 fw-bold"> Saves Gas </p> 
+            <p> Know when to change your RPM to save gas/fuel usage. </p>
+        </div>
+    </div>
+
+    <div class = "row justify-content-center px-5 mx-5" data-aos="fade-up" data-aos-duration="1500">
+        <iframe class = "player" 
+        src="https://www.youtube.com/embed/3eXWkyAPlrc?si=BjJ4fXwYc24ivoBp" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+        </iframe>
     </div>
 
     <div class = "row py-5 justify-fontent-center">
