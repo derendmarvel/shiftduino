@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="/images/starability-basic.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         html, body{
             font-family: 'Poppins', sans-serif;
@@ -54,19 +56,61 @@
             padding-top: 10px;
             padding-bottom: 10px;
         }
+
+        .pm-0{
+            padding: 0;
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
     <nav class="navbar bg-body-tertiary p-3">
         <div class="container-fluid">
-            <a class="navbar-brand fs-2 fw-bold"> SHIFTDUINO </a>
-            <ul class="nav justify-content-end">
+            <a class="navbar-brand fs-2 fw-bold ms-3"> SHIFTDUINO </a>
+            <ul class = "nav justify-content-center">
                 <li class="nav-item">
                     <a class="nav-link fw-semibold text-black" aria-current="page" href="/"> Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-black" href="/products"> About </a>
+                </li>
+            </ul>
+            <ul class="nav justify-content-end">
+                @guest
+                @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @endif
+
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+                @endif
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-black" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text-black">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+                @endguest
             </ul>
         </div>
     </nav>
@@ -89,6 +133,10 @@
         var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1,
         spaceBetween: 10,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false
+        },
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -104,6 +152,12 @@
             },
         },
         });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init();
     </script>
 </body>
 </html>

@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductController::class, 'index']);
 
+Route::get('/home', [ProductController::class, 'index']);
+
 Route::get('/products', [ProductController::class, 'show']);
 
 Route::get('/product/{id}', [ProductController::class, 'detail']);
@@ -37,3 +39,7 @@ Route::post('feedback', [FeedbackController::class, 'create']);
 //     return view('productlist');
 // });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

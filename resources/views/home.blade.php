@@ -6,7 +6,7 @@
     <div class = "header row justify-content-center align-items-center align-middle p-5">
         <div class = "col-6">
         </div>
-        <div class = "col-6 my-5 p-4">
+        <div class = "col-6 my-5 py-4" data-aos="fade-up" data-aos-duration="1500">
             <h5 class = "fs-5"> ENHANCE YOUR </h5>
             <h1 class = "fw-bold fs-0 mb-0 pb-0"> DRIVING EXPERIENCE </h1>
             <a class = " w-50 btn btn-outline-dark rounded-0 px-5 py-2 my-2" href = "/products"> Browse Catalog </a>
@@ -14,9 +14,9 @@
     </div>
 
     <div class = "row p-5 justify-content-center" id = "products">
-        <h1 class = "fw-bold fs-0 mb-0 pb-0 text-center"> Products </h1>
-        <h5 class = "fw-light mb-5 text-center"> Find your perfect Shiftduino </h5>
-        <div class = "col-3 shadow-sm rounded-3 p-0 mx-3">
+        <h1 class = "fw-bold fs-0 mb-0 pb-0 text-center" data-aos="fade-up" data-aos-duration="1500"> Products </h1>
+        <h5 class = "fw-light mb-5 text-center" data-aos="fade-up" data-aos-duration="1500"> Find your perfect Shiftduino </h5>
+        <div class = "col-3 shadow-sm rounded-3 p-0 mx-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250">
             <img src = "{{ $product1->image }}" class = "w-100 m-0">
             <div class = "pt-2 pb-4 px-4"> 
                 <p class = "fw-medium my-2"> {{ $product1->name }}</p>
@@ -24,7 +24,7 @@
                 <a class = " btn btn-outline-success rounded-0" href = "/product/{{$product1->id}}"> View Product </a>
             </div>
         </div>
-        <div class = "col-3 shadow-sm rounded-3 p-0 mx-3">
+        <div class = "col-3 shadow-sm rounded-3 p-0 mx-3" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
             <img src = "{{ $product2->image }}" class = "w-100 m-0">
             <div class = "pt-2 pb-4 px-4"> 
                 <p class = "fw-medium my-2"> {{ $product2->name }} </p>
@@ -51,12 +51,12 @@
     </div>
 
     <div class = "row py-5 justify-fontent-center">
-        <h1 class = "fw-bold fs-0 mb-0 pb-0 text-center"> Feedback </h1>
-        <h5 class = "fw-light mb-5 text-center"> Share your thoughts on Shiftduino </h5>
+        <h1 class = "fw-bold fs-0 mb-0 pb-0 text-center" data-aos="fade-up" data-aos-duration="1500"> Feedback </h1>
+        <h5 class = "fw-light mb-5 text-center" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250"> Share your thoughts on Shiftduino </h5>
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 @foreach ($feedbacks as $feedback)
-                <div class="swiper-slide shadow-lg">
+                <div class="swiper-slide shadow-lg" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250">
                     <div class = "row px-5 d-flex justify-content-center">
                     <p class="starability-result" data-rating="{{ $feedback->rating }}"> </p>
                         <h1 class = "fw-semibold fs-4 my-2"> {{ $feedback->name }} </h1>
@@ -68,9 +68,9 @@
             <div class="swiper-pagination"></div>
         </div>
         <div class = "container d-flex flex-column align-items-center my-5">
-            <h1 class = "fw-bold fs-2 my-3 pb-0 text-center"> Your Feedback </h1>
-            <h5 class = "fw-light mb-5 text-center"> Help us improve our product! </h5>
-            <form method = "POST" action = "/feedback" class = "w-100 d-flex flex-column align-items-center"> 
+            <h1 class = "fw-bold fs-2 my-3 pb-0 text-center" data-aos="fade-up" data-aos-duration="1500"> Your Feedback </h1>
+            <h5 class = "fw-light mb-5 text-center" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="250"> Help us improve our product! </h5>
+            <form method = "POST" action = "/feedback" class = "w-100 d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"> 
                 @method('post')
                 @csrf
 

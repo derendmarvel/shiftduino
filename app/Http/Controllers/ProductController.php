@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Feedback;
 use App\Models\Product;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -30,17 +32,35 @@ class ProductController extends Controller
     }
 
     public static function detail($id){
+        $user = Auth::user();
         $product = Product::find($id);
-    
+
+        $existingWishlist = Wishlist::where('user_id', $user->id)
+                                        ->where('product_id', $product->id)
+                                        ->first();
         return view('product', [
             'product' => $product,
+            'existingWishlist' => $existingWishlist
         ]);
     }
 
     public static function wishlist($id){
+        $user = Auth::user();
         $product = Product::find($id);
-        $product['demand'] = $product['demand'] + 1;
-        $product->save();
+
+        $existingWishlist = Wishlist::where('user_id', $user->id)
+                                        ->where('product_id', $product->id)
+                                        ->first();
+
+        if (!$existingWishlist){
+            $product['demand'] = $product['demand'] + 1;
+            $product->save();
+
+            Wishlist::create([
+                'user_id' => $user->id,
+                'product_id' => $product->id
+            ]);
+        }
 
         $products = Product::all();
 
