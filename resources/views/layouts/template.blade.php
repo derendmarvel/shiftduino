@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W0DCRQJ7EX"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-W0DCRQJ7EX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> @yield('title') </title>
@@ -79,7 +88,7 @@
             }
 
             .fs-0{
-                font-size: 64px;
+                font-size: 72px;
             }
 
             .normal-text{
@@ -90,8 +99,10 @@
                 background: url('/images/Background-1.png');
                 background-size: cover;
                 height: 100%;
-                padding-top: 200px;
-                padding-bottom: 200px;
+                padding-top: 260px;
+                padding-bottom: 260px;
+                padding-right: 50px;
+                padding-left: 50px;
             }
 
             .swiper {
