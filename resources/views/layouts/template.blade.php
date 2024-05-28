@@ -134,9 +134,15 @@
                         <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
                     </li>
                     @auth
+                    @if (Auth::user()->isAdmin())
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-black" href="/admin"> Wishlist </a>
+                    </li>
+                    @else
                     <li class="nav-item">
                         <a class="nav-link fw-semibold text-black" href="/wishlist"> Wishlist </a>
                     </li>
+                    @endif
                     @endauth
                 </ul>
             </div>

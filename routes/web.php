@@ -36,6 +36,8 @@ Route::delete('/wishlist/destroy/{product}', [WishlistController::class, 'destro
 
 Route::post('feedback', [FeedbackController::class, 'create']);
 
+Route::get('/admin', [WishlistController::class, 'view'])->middleware('admin')->name('admin');
+
 // Route::get('/product', function () {
 //     return view('product');
 // });

@@ -28,4 +28,13 @@ class WishlistController extends Controller
         $product->save();
         return redirect()->route('wishlist');
     }
+
+    public function view()
+    {
+        $wishlist = Wishlist::all();
+
+        return view('admin', [
+            'wishlists' => $wishlist
+        ]);
+    }
 }

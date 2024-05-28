@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'name' => 'Classic Shiftduino',
-            'price' => 150,
+            'price' => 450,
             'description' => 'This Shiftduino is a classic variant of our Shiftduino, which can change LED light as your RPM changes.',
             'image' => '/images/Shiftduino.jpg',
             'image2' => '/images/Background-1.png',
@@ -24,7 +24,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'name' => 'RoboDuino (Blue)',
-            'price' => 200,
+            'price' => 600,
             'description' => 'This Shiftduino is a blue-painted variant of our Shiftduino, which can change emotions as your RPM changes.',
             'image' => '/images/1.jpg',
             'image2' => '/images/Background-Blue.png',
@@ -33,7 +33,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'name' => 'RoboDuino (Orange)',
-            'price' => 200,
+            'price' => 600,
             'description' => 'This Shiftduino is an orange-painted variant of our Shiftduino, which can change emotions as your RPM changes.',
             'image' => '/images/2.jpg',
             'image2' => '/images/Background-Orange.png',
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'name' => 'RoboDuino (Green)',
-            'price' => 200,
+            'price' => 600,
             'description' => 'This Shiftduino is a green-painted variant of our Shiftduino, which can change emotions as your RPM changes.',
             'image' => '/images/3.jpg',
             'image2' => '/images/Background-Green.png',

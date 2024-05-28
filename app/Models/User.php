@@ -22,7 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'wishlist'
+        'wishlist',
+        'role'
     ];
 
     /**
@@ -47,5 +48,12 @@ class User extends Authenticatable
 
     public function wishlists(): HasMany{
         return $this->hasMany(Wishlist::class);
+    }
+
+    public function isAdmin(): bool {
+        if ($this->role == 'admin') {
+            return true;
+        }
+        return false;
     }
 }
