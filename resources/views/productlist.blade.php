@@ -15,7 +15,11 @@
             <img src = "{{ $product-> image }}" class = "w-100 m-0">
             <div class = "pt-2 pb-4 px-4"> 
                 <p class = "fw-medium my-2"> {{ $product->name }} </p>
-                <p class = "opacity-50"> Rp. {{ $product->price }}.000 </p>
+                @if ($product->id == 2)
+                <p class = "opacity-50"> {{ $product->launch }} </p>
+                @else
+                <p class = "opacity-50"> {{ $product->price }} </p>
+                @endif
                 <a class = " btn btn-outline-success rounded-0" href = "/product/{{$product->id}}"> View Product </a>
             </div>
         </div>

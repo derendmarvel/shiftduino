@@ -11,7 +11,11 @@
                         <img src = "{{ $product->product->image }}" class = "w-100 m-0">
                         <div class = "pt-2 pb-4 px-4"> 
                             <p class = "fw-medium my-2"> {{ $product->product->name }} </p>
-                            <p class = "opacity-50"> Rp. {{ $product->product->price }}.000 </p>
+                            @if ($product->product->id == 2)
+                            <p class = "opacity-50"> {{ $product->product->launch }} </p>
+                            @else
+                            <p class = "opacity-50"> {{ $product->product->price }} </p>
+                            @endif
                             <form action="/wishlist/destroy/{{$product->product->id}}" method="POST" id="deleteWishlist">
                                 @method('delete')
                                 @csrf
