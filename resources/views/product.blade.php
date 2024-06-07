@@ -26,7 +26,7 @@
 
         <div class = "col-12 col-md-6 px-3 text-center text-md-start" data-aos="fade-up" data-aos-duration="1500">
             <h1 class = "fw-bold fs-0"> {{ $product->name }} </h1> 
-            <p class = "opacity-75 fs-3"> Rp {{ $product->price }}.000 </p>
+            <p class = "opacity-75 fs-3"> {{ $product->price }}</p>
             <p class = "opacity-75"> {{ $product->launch }} </p>
 
             <p> {{ $product->description }} </p>

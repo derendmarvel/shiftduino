@@ -20,7 +20,7 @@
             <img src = "{{ $product1->image }}" class = "w-100 m-0">
             <div class = "pt-2 pb-4 px-4"> 
                 <p class = "fw-medium my-2"> {{ $product1->name }}</p>
-                <p class = "opacity-50"> Rp. {{ $product1->price }}.000 </p>
+                <p class = "opacity-50"> {{ $product1->price }} </p>
                 <a class = " btn btn-outline-success rounded-0" href = "/product/{{$product1->id}}"> View Product </a>
             </div>
         </div>
@@ -28,7 +28,7 @@
             <img src = "{{ $product2->image }}" class = "w-100 m-0">
             <div class = "pt-2 pb-4 px-4"> 
                 <p class = "fw-medium my-2"> {{ $product2->name }} </p>
-                <p class = "opacity-50"> Rp. {{ $product2->price }}.000 </p>
+                <p class = "opacity-50"> {{ $product2->launch }} </p>
                 <a class = " btn btn-outline-success rounded-0" href = "/product/{{$product2->id}}"> View Product </a>
             </div>
         </div>
