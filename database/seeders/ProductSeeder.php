@@ -15,37 +15,21 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'name' => 'Classic Shiftduino',
-            'price' => 450,
-            'description' => 'This Shiftduino is a classic variant of our Shiftduino, which can change LED light as your RPM changes.',
-            'image' => '/images/Shiftduino.jpg',
-            'image2' => '/images/Background-1.png',
+            'price' => 300,
+            'description' => 'This Shiftduino is a classic variant of our Shiftduino, which can change its LED light as your RPM changes.',
+            'launch' => 'Coming Soon',
+            'image' => '/images/Shiftduino Product.jpg',
+            'image2' => '/images/ShiftDuino Background.jpg',
             'demand' => 0,
         ]);
 
         Product::create([
             'name' => 'RoboDuino (Blue)',
-            'price' => 600,
-            'description' => 'This Shiftduino is a blue-painted variant of our Shiftduino, which can change emotions as your RPM changes.',
+            'price' => 450,
+            'description' => 'This Shiftduino is a blue-painted variant of our Shiftduino, which can change emotions as your RPM changes. This product is still in early stages of development, so stay tuned for more updates! ',
+            'launch' => 'Coming Soon',
             'image' => '/images/1.jpg',
             'image2' => '/images/Background-Blue.png',
-            'demand' => 0,
-        ]);
-
-        Product::create([
-            'name' => 'RoboDuino (Orange)',
-            'price' => 600,
-            'description' => 'This Shiftduino is an orange-painted variant of our Shiftduino, which can change emotions as your RPM changes.',
-            'image' => '/images/2.jpg',
-            'image2' => '/images/Background-Orange.png',
-            'demand' => 0,
-        ]);
-
-        Product::create([
-            'name' => 'RoboDuino (Green)',
-            'price' => 600,
-            'description' => 'This Shiftduino is a green-painted variant of our Shiftduino, which can change emotions as your RPM changes.',
-            'image' => '/images/3.jpg',
-            'image2' => '/images/Background-Green.png',
             'demand' => 0,
         ]);
     }

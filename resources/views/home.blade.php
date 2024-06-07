@@ -6,7 +6,7 @@
     <div class = "header row justify-content-center align-items-center align-middle p-5">
         <div class = "col-0 col-md-6">
         </div>
-        <div class = "col-12 col-md-6 my-5 py-4" data-aos="fade-up" data-aos-duration="1500">
+        <div class = "col-12 col-md-6 my-5 py-4 px-2" data-aos="fade-up" data-aos-duration="1500">
             <h5 class = "fs-5"> ENHANCE YOUR </h5>
             <h1 class = "fw-bold fs-0 mb-0 pb-0"> DRIVING EXPERIENCE </h1>
             <a class = "w-75 w-md-50 btn btn-outline-dark rounded-0 px-2 px-md-5 py-2 my-2" href = "/products"> Browse Catalog </a>

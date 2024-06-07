@@ -96,7 +96,7 @@
             }
 
             .header{
-                background: url('/images/Background-1.png');
+                background: url('/images/ShiftDuino Background.jpg');
                 background-size: cover;
                 height: 100%;
                 padding-top: 260px;
@@ -125,62 +125,62 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="flex-grow-1 d-flex justify-content-center">
-                <ul class = "nav">
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold text-black" aria-current="page" href="/"> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
-                    </li>
-                    @auth
-                    @if (Auth::user()->isAdmin())
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold text-black" href="/admin"> Wishlist </a>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link fw-semibold text-black" href="/wishlist"> Wishlist </a>
-                    </li>
-                    @endif
-                    @endauth
-                </ul>
-            </div>
-            <div class="d-flex justify-content-end">
-                <ul class="nav">
-                    @guest
-                    @if (Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @endif
+                <div class="navbar-nav flex-grow-1 d-flex justify-content-center">
+                    <ul class = "navbar-nav text-center">
+                        <li class="nav-link">
+                            <a class="nav-link fw-semibold text-black" aria-current="page" href="/"> Home</a>
+                        </li>
+                        <li class="nav-link">
+                            <a class="nav-link fw-semibold text-black" href="/products"> Products </a>
+                        </li>
+                        @auth
+                        @if (Auth::user()->isAdmin())
+                        <li class="nav-link">
+                            <a class="nav-link fw-semibold text-black" href="/admin"> Wishlist </a>
+                        </li>
+                        @else
+                        <li class="nav-link">
+                            <a class="nav-link fw-semibold text-black" href="/wishlist"> Wishlist </a>
+                        </li>
+                        @endif
+                        @endauth
+                    </ul>
+                </div>
+                <div class="navbar-nav d-flex justify-content-end">
+                    <ul class="navbar-nav text-center">
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-link">
+                            <a class="nav-link text-black" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
 
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                    @endif
-                    @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-black" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                        @if (Route::has('register'))
+                        <li class="nav-link">
+                            <a class="nav-link text-black" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-link dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text-black">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                    @endguest
-                </ul>
-            </div>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-black" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none text-black">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
+                </div>`
             </div>
         </div>
     </nav>
