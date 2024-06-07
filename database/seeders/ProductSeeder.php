@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'name' => 'Classic Shiftduino',
-            'price' => 300,
+            'price' => 380,
             'description' => 'This Shiftduino is a classic variant of our Shiftduino, which can change its LED light as your RPM changes.',
             'launch' => 'Coming Soon',
             'image' => '/images/Shiftduino Product.jpg',
