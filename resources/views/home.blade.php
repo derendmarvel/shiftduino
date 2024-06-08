@@ -53,7 +53,7 @@
 
     <div class = "row justify-content-center px-2 mx-2 px-md-5 mx-md-5" data-aos="fade-up" data-aos-duration="1500">
         <iframe class = "player" 
-        src="https://www.youtube.com/embed/3eXWkyAPlrc?si=BjJ4fXwYc24ivoBp" 
+        src="https://www.youtube.com/embed/Nir1qkMahws?si=TQTUyk2HnB81WJZ7" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
